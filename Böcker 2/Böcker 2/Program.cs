@@ -20,9 +20,7 @@ namespace Böcker_2
             var e1 = new ElectronicBook();
 
             e1.SetProductID();
-            bool isBook;
-            bool isEBook;
-            bool isProduct;
+
 
 
             Console.WriteLine($"Info om boken:");
@@ -37,13 +35,13 @@ namespace Böcker_2
 
             Console.WriteLine($"Olika test:");
             Console.WriteLine();
-            Console.WriteLine($"   Är b1 en bok?      {isBook = b1 is Book}");
-            Console.WriteLine($"   Är b1 en e-bok?    {isEBook = b1 is ElectronicBook}");
-            Console.WriteLine($"   Är b1 en produkt?  {isProduct = b1 is Product}");
+            Console.WriteLine($"   Är b1 en bok?      {b1 is Book}");
+            Console.WriteLine($"   Är b1 en e-bok?    {b1 is ElectronicBook}");
+            Console.WriteLine($"   Är b1 en produkt?  {b1 is Product}");
             Console.WriteLine();
-            Console.WriteLine($"   Är e1 en bok?      {isBook = e1 is Book}");
-            Console.WriteLine($"   Är e1 en e-bok?    {isEBook = e1 is ElectronicBook}");
-            Console.WriteLine($"   Är e1 en produkt?  {isProduct = e1 is Product}");
+            Console.WriteLine($"   Är e1 en bok?      {e1 is Book}");
+            Console.WriteLine($"   Är e1 en e-bok?    {e1 is ElectronicBook}");
+            Console.WriteLine($"   Är e1 en produkt?  {e1 is Product}");
             Console.WriteLine();
             e1.SendBookTo("oo@happybits.se");
             Console.WriteLine();
