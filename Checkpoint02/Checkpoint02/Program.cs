@@ -22,24 +22,17 @@ namespace Checkpoint02
                 LargestRoom(roomList);
                 TotalRooms(roomList);
                 Console.WriteLine();
-
-
-
-
             }
         }
-
         private static void TotalRooms(List<Room> roomList)
         {
             var xxx = roomList;
 
             WriteInGreen($"Lägenheten består av {xxx.Count()} rum.");
         }
-
         private static void LargestRoom(List<Room> roomList)
         {
             var xxx = roomList.OrderByDescending(y => y.Size);
-
 
             foreach (var info in xxx)
             {
@@ -48,7 +41,6 @@ namespace Checkpoint02
                 break;
             }
         }
-
         private static void LightsOn(List<Room> roomList)
         {
             var xxx = roomList.Where(y => y.LightsOnOff.ToUpper() == "ON").OrderBy(y => y.Name);
@@ -69,24 +61,21 @@ namespace Checkpoint02
             }
             
         }
-
         private static void WriteInGreen(string v)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(v);
             Console.ResetColor();
         }
-
         private static List<Room> CreateListOfRooms(string input)
         {
             var allRooms = new List<Room>();
 
             var splittedLine = input.Split('|');
 
-
                 foreach (string newLine in splittedLine)
                 {
-                if (!Regex.IsMatch(newLine, @"^\s*[a-zåäö]{3,15}\s{1,}\d+(m2)\s{1,}(off|on)\s*$", RegexOptions.IgnoreCase))
+                if (!Regex.IsMatch(newLine, @"^\s*[a-zåäö]{3,15}\s\d+(m2)\s(off|on)\s*$", RegexOptions.IgnoreCase))
                 {
                       WriteInRed($"Ogiltlig indata");
                         break;
@@ -114,18 +103,13 @@ namespace Checkpoint02
 
                 }
             return allRooms;
-
-
         }
-
         private static void WriteInRed(string v)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(v);
             Console.ResetColor();
         }
-
-
         private static string GetInputFromUser()
         {
             Header("Ange rum i lägenheten:");
@@ -133,7 +117,6 @@ namespace Checkpoint02
 
             return input;
         }
-
         private static void Header(string v)
         {
             Console.ForegroundColor = ConsoleColor.White;
